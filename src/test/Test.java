@@ -1,4 +1,4 @@
-package com.ezrebclan;
+package test;
 
 import java.awt.Canvas;
 import java.awt.Graphics;
@@ -10,7 +10,7 @@ import java.io.FileOutputStream;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
-import com.ezrebclan.asset.ImageAsset;
+import com.ezrebclan.asset.assetTypes.ImageAsset;
 
 public class Test {
 
@@ -18,6 +18,7 @@ public class Test {
 		loadImageAsset();
 	}
 	
+	@SuppressWarnings("unused")
 	private static void saveImageAsset() throws Exception {
 		File testImageAsset = new File("test.asset");
 		File testImage = new File("test.png");

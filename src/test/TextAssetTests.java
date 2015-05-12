@@ -10,8 +10,8 @@ import java.io.FileReader;
 
 import org.junit.Test;
 
-import com.ezrebclan.asset.BigTextAsset;
-import com.ezrebclan.asset.SmallTextAsset;
+import com.ezrebclan.asset.assetTypes.BigTextAsset;
+import com.ezrebclan.asset.assetTypes.SmallTextAsset;
 
 public class TextAssetTests {
 

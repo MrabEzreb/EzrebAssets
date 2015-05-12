@@ -1,6 +1,7 @@
-package com.ezrebclan.asset;
+package com.ezrebclan.asset.core;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.zip.ZipEntry;
@@ -10,9 +11,13 @@ import java.util.zip.ZipOutputStream;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
+import com.ezrebclan.asset.assetTypes.BigTextAsset;
+import com.ezrebclan.asset.assetTypes.ImageAsset;
+import com.ezrebclan.asset.assetTypes.SmallTextAsset;
+
 /**
  * An Asset is anything that gets loaded by your code. Some examples are Images, Models, Plain Text, Raw Object Data, and Scripts.<br>
- * An Asset object holds two things, the data itself, and an {@link com.ezrebclan.asset.AssetIndex AssetIndex} object. The index object holds information about the data.<br><br>
+ * An Asset object holds two things, the data itself, and an {@link com.ezrebclan.asset.core.AssetIndex AssetIndex} object. The index object holds information about the data.<br><br>
  * Assets can be exported, by calling the {@link #save(OutputStream) save()} method and providing an {@link java.io.OutputStream OutputStream} to write to, which is typically a {@link FileOutputStream}, but could be anything.<br>
  * Assets can also be imported, by constructing them with an {@link java.io.InputStream InputStream} to get the data from. Again, this is typically a {@link FileInputStream}, but could be anything.<br><br>
  * Since the Asset class is abstract, you can't really use it very easily. Instead, use one of the subclasses:
@@ -23,7 +28,7 @@ import org.json.JSONTokener;
  * </ul>
  * @author Mrab Ezreb
  *
- * @param <Type>
+ * @param <Type> The type of the asset's data
  */
 //<li>{@link }</li>
 public abstract class Asset<Type> implements Saveable, Loadable {
@@ -39,13 +44,16 @@ public abstract class Asset<Type> implements Saveable, Loadable {
 	public AssetIndex index;
 	
 	/**
+	 * Loads an asset from an {@link InputStream}
 	 * @param input An {@link InputStream} to load from.
+	 * @throws Exception Throws any exceptions
 	 */
 	protected Asset(InputStream input) throws Exception {
 		this.load(input);
 	}
 	
 	/**
+	 * Creates a new, empty asset.
 	 * @param name The name of the asset
 	 * @param type The type of the asset
 	 */
@@ -91,6 +99,8 @@ public abstract class Asset<Type> implements Saveable, Loadable {
 	
 	/**
 	 * Loads index.json from an {@link ZipInputStream}
+	 * @param input An {@link InputStream} to load the index from
+	 * @throws Exception Throws any exceptions
 	 */
 	private void loadIndex(InputStream input) throws Exception {
 		JSONObject indexJSON = new JSONObject(new JSONTokener(input));
@@ -99,12 +109,14 @@ public abstract class Asset<Type> implements Saveable, Loadable {
 	/**
 	 * Called when saving the asset. Subclasses override this in order to save the asset's data into the asset object.
 	 * @param output This is a direct reference to the asset's outputstream. Write the asset DIRECTLY to this parameter.
+	 * @throws Exception Throws any exceptions
 	 */
 	protected abstract void saveData(OutputStream output) throws Exception;
 	/**
 	 * Called when loading the asset. Subclasses override this in order to load the asset's data into the asset object.
 	 * @param input This is a direct reference to the asset's inputstream. Read the asset DIRECTLY from this parameter.
 	 * @return The asset data
+	 * @throws Exception Throws any exceptions
 	 */
 	protected abstract Type loadData(InputStream input) throws Exception;
 }

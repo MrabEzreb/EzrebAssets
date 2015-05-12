@@ -1,4 +1,4 @@
-package com.ezrebclan.asset;
+package com.ezrebclan.asset.core;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -13,6 +13,7 @@ public interface Loadable {
 	/**
 	 * Loads a Loadable object from an {@link InputStream}
 	 * @param input An {@link InputStream} to load from. This is typically a {@link FileInputStream}, but could be anything.
+	 * @throws Exception Throws any exceptions
 	 */
 	public abstract void load(InputStream input) throws Exception;
 }

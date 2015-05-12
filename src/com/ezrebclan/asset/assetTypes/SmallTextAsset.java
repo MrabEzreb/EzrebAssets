@@ -1,4 +1,4 @@
-package com.ezrebclan.asset;
+package com.ezrebclan.asset.assetTypes;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -7,9 +7,11 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 
+import com.ezrebclan.asset.core.Asset;
+
 /**
  * A <i>Small</i> Text Asset is a single line of text.<br>
- * If you need to store multiple lines of text, look into a {@linkplain com.ezrebclan.asset.BigTextAsset Big Text Asset}.
+ * If you need to store multiple lines of text, look into a {@linkplain com.ezrebclan.asset.assetTypes.BigTextAsset Big Text Asset}.
  * @author Mrab Ezreb
  */
 public class SmallTextAsset extends Asset<String> {
@@ -17,6 +19,7 @@ public class SmallTextAsset extends Asset<String> {
 	/**
 	 * Loads a SmallTextAsset from an {@link InputStream}
 	 * @param input An {@link InputStream} to load from.
+	 * @throws Exception Throws any exceptions
 	 */
 	public SmallTextAsset(InputStream input) throws Exception {
 		super(input);

@@ -1,4 +1,4 @@
-package com.ezrebclan.asset;
+package com.ezrebclan.asset.core;
 
 import java.io.FileOutputStream;
 import java.io.OutputStream;
@@ -13,6 +13,7 @@ public interface Saveable {
 	/**
 	 * Saves a Saveable object to an {@link OutputStream}
 	 * @param output An {@link OutputStream} to save to. This is typically a {@link FileOutputStream}, but could be anything.
+	 * @throws Exception Throws any exceptions
 	 */
 	public abstract void save(OutputStream output) throws Exception;
 }

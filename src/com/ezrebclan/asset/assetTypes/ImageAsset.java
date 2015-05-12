@@ -1,4 +1,4 @@
-package com.ezrebclan.asset;
+package com.ezrebclan.asset.assetTypes;
 
 import java.awt.image.BufferedImage;
 import java.io.InputStream;
@@ -7,6 +7,9 @@ import java.io.OutputStream;
 import javax.imageio.ImageIO;
 
 import org.json.JSONObject;
+
+import com.ezrebclan.asset.core.Asset;
+import com.ezrebclan.asset.core.AssetIndex;
 
 /**
  * An ImageAsset holds a {@link BufferedImage} as its data.<br>
@@ -37,6 +40,7 @@ public class ImageAsset extends Asset<BufferedImage> {
 	/**
 	 * Loads an ImageAsset from an {@link InputStream}
 	 * @param input An {@link InputStream} to load from.
+	 * @throws Exception Throws any exceptions
 	 */
 	public ImageAsset(InputStream input) throws Exception {
 		super(input);

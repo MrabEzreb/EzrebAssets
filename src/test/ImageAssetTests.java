@@ -15,7 +15,7 @@ import javax.swing.JFrame;
 
 import org.junit.Test;
 
-import com.ezrebclan.asset.ImageAsset;
+import com.ezrebclan.asset.assetTypes.ImageAsset;
 
 public class ImageAssetTests {
 

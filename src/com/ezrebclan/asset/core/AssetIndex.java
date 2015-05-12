@@ -1,4 +1,4 @@
-package com.ezrebclan.asset;
+package com.ezrebclan.asset.core;
 
 import org.json.JSONObject;
 import org.json.JSONString;
@@ -26,9 +26,9 @@ public class AssetIndex implements JSONString {
 	
 	/**
 	 * Use this constructor to set the asset's name, storedname, and details all in one fell swoop.
-	 * @param assetName
-	 * @param type
-	 * @param details
+	 * @param assetName the asset's name
+	 * @param type the asset's type
+	 * @param details details about the asset
 	 */
 	public AssetIndex(String assetName, String type, JSONObject details) {
 		this.assetName = assetName;
@@ -38,8 +38,8 @@ public class AssetIndex implements JSONString {
 
 	/**
 	 * This constructor sets the asset's name and storedname, and it also sets the asset's details to a EmptyDetails object.
-	 * @param assetName
-	 * @param type
+	 * @param assetName the asset's name
+	 * @param type the asset's type
 	 */
 	public AssetIndex(String assetName, String type) {
 		this.assetName = assetName;
