@@ -11,6 +11,7 @@ import org.json.JSONObject;
 public class ImageAsset extends Asset<BufferedImage> {
 
 	public ImageAsset(String name, BufferedImage image) {
+		super();
 		data = image;
 		index = new AssetIndex(name, "image.png");
 		JSONObject details = new JSONObject();
@@ -19,7 +20,10 @@ public class ImageAsset extends Asset<BufferedImage> {
 		details.put("Resolution", image.getWidth()+"x"+image.getHeight());
 		index.setDetails(details);
 	}
-	
+	public ImageAsset(InputStream input) throws Exception {
+		super(input);
+	}
+
 	@Override
 	protected void saveData(OutputStream output) throws Exception {
 		ImageIO.write(data, "png", output);

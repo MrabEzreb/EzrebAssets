@@ -14,6 +14,12 @@ public abstract class Asset<Type> implements Saveable, Loadable {
 	public Type data;
 	public AssetIndex index;
 	
+	public Asset(InputStream input) throws Exception {
+		this.load(input);
+	}
+	
+	protected Asset(){}
+	
 	@Override
 	public void save(OutputStream output) throws Exception {
 		ZipOutputStream zos = new ZipOutputStream(output);
