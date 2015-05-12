@@ -1,12 +1,27 @@
-package com.ezrebclan.assets.asset;
+package com.ezrebclan.asset;
 
 import org.json.JSONObject;
 import org.json.JSONString;
 
+/**
+ * An AssetIndex is a JSON-Serializable object that holds information about an {@link Asset}, including the name and type of data.<br>
+ * It also holds a {@link JSONObject}, {@link #details}, which can contain anything you want it to.
+ * @author Mrab Ezreb
+ */
 public class AssetIndex implements JSONString {
 
+	/**
+	 * The name of the asset
+	 */
 	private String assetName;
+	/**
+	 * The asset's type
+	 */
 	private String type;
+	/**
+	 * Any extra details about the asset
+	 * @see JSONObject
+	 */
 	private JSONObject details;
 	
 	/**
@@ -33,8 +48,8 @@ public class AssetIndex implements JSONString {
 	}
 	
 	/**
-	 * This constructor is used to get an AssetIndex object from an asset's index
-	 * @param json A JSONObject ready for parsing
+	 * This constructor is used to get an AssetIndex object from an asset's index.json file
+	 * @param json A {@link JSONObject} ready for parsing
 	 */
 	public AssetIndex(JSONObject json) {
 		this.assetName = json.getString("assetName");

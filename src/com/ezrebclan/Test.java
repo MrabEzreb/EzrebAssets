@@ -1,4 +1,4 @@
-package com.ezrebclan.assets;
+package com.ezrebclan;
 
 import java.awt.Canvas;
 import java.awt.Graphics;
@@ -10,10 +10,9 @@ import java.io.FileOutputStream;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
-import com.ezrebclan.assets.asset.ImageAsset;
+import com.ezrebclan.asset.ImageAsset;
 
-
-public class Main {
+public class Test {
 
 	public static void main(String[] args) throws Exception {
 		loadImageAsset();
