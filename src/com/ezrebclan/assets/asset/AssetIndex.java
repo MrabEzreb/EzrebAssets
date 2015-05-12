@@ -1,4 +1,4 @@
-package com.ezrebclan.jvm2Dsolo.asset;
+package com.ezrebclan.assets.asset;
 
 import org.json.JSONObject;
 import org.json.JSONString;

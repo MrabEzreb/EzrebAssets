@@ -1,4 +1,4 @@
-package com.ezrebclan.jvm2Dsolo;
+package com.ezrebclan.assets;
 
 import java.awt.Canvas;
 import java.awt.Graphics;
@@ -10,7 +10,7 @@ import java.io.FileOutputStream;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
-import com.ezrebclan.jvm2Dsolo.asset.ImageAsset;
+import com.ezrebclan.assets.asset.ImageAsset;
 
 
 public class Main {

@@ -1,4 +1,4 @@
-package com.ezrebclan.jvm2Dsolo.asset;
+package com.ezrebclan.assets.asset;
 
 import java.awt.image.BufferedImage;
 import java.io.InputStream;
