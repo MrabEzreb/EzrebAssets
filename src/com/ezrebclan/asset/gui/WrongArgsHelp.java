@@ -1,13 +1,17 @@
-package com.ezrebclan.asset.help;
+package com.ezrebclan.asset.gui;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.EmptyBorder;
 
-public class NoArgs extends JFrame {
+import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
+
+public class WrongArgsHelp extends JFrame {
 
 	/**
 	 * 
@@ -22,7 +26,7 @@ public class NoArgs extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					NoArgs frame = new NoArgs();
+					WrongArgsHelp frame = new WrongArgsHelp();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,7 +38,22 @@ public class NoArgs extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public NoArgs() {
+	public WrongArgsHelp() {
+		try {
+			UIManager.setLookAndFeel(WindowsLookAndFeel.class.toString());
+		} catch (ClassNotFoundException e1) {
+			e1.printStackTrace();
+			System.exit(-1);
+		} catch (InstantiationException e1) {
+			e1.printStackTrace();
+			System.exit(-1);
+		} catch (IllegalAccessException e1) {
+			e1.printStackTrace();
+			System.exit(-1);
+		} catch (UnsupportedLookAndFeelException e1) {
+			e1.printStackTrace();
+			System.exit(-1);
+		}
 		setTitle("EzrebAssets Help");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 400, 190);
