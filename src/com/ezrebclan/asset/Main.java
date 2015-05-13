@@ -25,7 +25,7 @@ public class Main {
 
 	/**
 	 * This being the main method, it should run the things, right? Well, actually, it's a little more, eh, simple.<br>
-	 * The main method actually checks the length of the args array, if it's > 0, then it passes on the args to {@link #chooseMethod(String[])}, otherwise, it runs {@link #displayHelp()}.
+	 * The main method actually checks the length of the args array, if it's &gt; 0, then it passes on the args to {@link #chooseMethod(String[])}, otherwise, it runs {@link #displayHelp()}.
 	 * @param args The arguments passed through either the console or a shortcut.
 	 */
 	public static void main(String[] args) {

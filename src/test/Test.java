@@ -12,6 +12,12 @@ import javax.swing.JFrame;
 
 import com.ezrebclan.asset.assetTypes.ImageAsset;
 
+/**
+ * An old main class, before JUnit
+ * @author Mrab Ezreb
+ * @deprecated Old main class
+ */
+@Deprecated
 public class Test {
 
 	public static void main(String[] args) throws Exception {

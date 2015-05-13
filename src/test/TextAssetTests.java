@@ -13,6 +13,10 @@ import org.junit.Test;
 import com.ezrebclan.asset.assetTypes.BigTextAsset;
 import com.ezrebclan.asset.assetTypes.SmallTextAsset;
 
+/**
+ * JUnit tests for Text Assets
+ * @author Mrab Ezreb
+ */
 public class TextAssetTests {
 
 	File smallTest = new File("smallTest.txt");
@@ -20,6 +24,10 @@ public class TextAssetTests {
 	File smallAsset = new File("smallTest.asset");
 	File bigAsset = new File("bigTest.asset");
 	
+	/**
+	 * Creates a new small text asset
+	 * @throws Exception thrown from constructing an asset
+	 */
 	@Test
 	public void packageSmallAsset() throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(smallTest));
@@ -28,6 +36,10 @@ public class TextAssetTests {
 		assertNotNull("SmallTextAsset1 == Null", sta);
 	}
 	
+	/**
+	 * Creates a new small text asset and saves it.
+	 * @throws Exception thrown from constructing an asset
+	 */
 	@Test
 	public void exportSmallAsset() throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(smallTest));
@@ -39,6 +51,10 @@ public class TextAssetTests {
 		assertTrue("FileNotExist", smallAsset.exists()&&smallAsset.isFile());
 	}
 	
+	/**
+	 * Creates a new small text asset, saves it, then loads it.
+	 * @throws Exception thrown from constructing an asset
+	 */
 	@Test
 	public void loadSmallAsset() throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(smallTest));
@@ -54,6 +70,10 @@ public class TextAssetTests {
 	}
 	
 
+	/**
+	 * Creates a new big text asset
+	 * @throws Exception thrown from constructing an asset
+	 */
 	@Test
 	public void packageBigAsset() throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(bigTest));
@@ -62,6 +82,10 @@ public class TextAssetTests {
 		assertNotNull("BigTextAsset1 == Null", sta);
 	}
 	
+	/**
+	 * Creates a new big text asset and saves it.
+	 * @throws Exception thrown from constructing an asset
+	 */
 	@Test
 	public void exportBigAsset() throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(bigTest));
@@ -73,6 +97,10 @@ public class TextAssetTests {
 		assertTrue("FileNotExist", bigAsset.exists()&&bigAsset.isFile());
 	}
 	
+	/**
+	 * Creates a new big text asset, saves it, then loads it.
+	 * @throws Exception thrown from constructing an asset
+	 */
 	@Test
 	public void loadBigAsset() throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(bigTest));

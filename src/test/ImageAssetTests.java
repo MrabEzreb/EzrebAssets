@@ -7,7 +7,6 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
 import javax.imageio.ImageIO;
@@ -17,8 +16,16 @@ import org.junit.Test;
 
 import com.ezrebclan.asset.assetTypes.ImageAsset;
 
+/**
+ * JUnit tests for ImageAssets
+ * @author Mrab Ezreb
+ */
 public class ImageAssetTests {
 
+	/**
+	 * Loads an image and creates an asset object.
+	 * @throws Exception thrown from constructing an asset
+	 */
 	@Test
 	public void packageAsset() throws Exception {
 		File assetRaw = new File("test.png");
@@ -27,8 +34,12 @@ public class ImageAssetTests {
 		assertNotNull("Asset == Null", asset);
 	}
 	
+	/**
+	 * Saves an asset
+	 * @throws Exception thrown from constructing an asset
+	 */
 	@Test
-	public void exportAsset() throws FileNotFoundException, Exception {
+	public void exportAsset() throws Exception {
 		File assetRaw = new File("test.png");
 		BufferedImage bi = ImageIO.read(assetRaw);
 		ImageAsset asset = new ImageAsset("image Test", bi);
@@ -39,6 +50,10 @@ public class ImageAssetTests {
 		assertTrue("File Not Existing", assetF.exists() && assetF.isFile());
 	}
 	
+	/**
+	 * Loads a saved asset
+	 * @throws Exception thrown from constructing an asset
+	 */
 	@Test
 	public void loadAsset() throws Exception {
 		File assetRaw = new File("test.png");
@@ -52,6 +67,10 @@ public class ImageAssetTests {
 		assertNotNull("Loaded Asset == Null", asset2);
 	}
 	
+	/**
+	 * Displays the image on a JFrame
+	 * @throws Exception thrown from constructing an asset
+	 */
 	public void displayAssets() throws Exception {
 		File assetRaw = new File("test.png");
 		BufferedImage bi = ImageIO.read(assetRaw);

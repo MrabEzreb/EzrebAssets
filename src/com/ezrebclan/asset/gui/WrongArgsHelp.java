@@ -21,6 +21,7 @@ public class WrongArgsHelp extends JFrame {
 
 	/**
 	 * Launch the application.
+	 * @param args should be null
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

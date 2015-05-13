@@ -1,38 +1,15 @@
 package com.ezrebclan.asset.gui;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.LookAndFeel;
-import javax.swing.UIManager;
-import javax.swing.UIManager.LookAndFeelInfo;
-import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JTabbedPane;
-
+import java.awt.Component;
+import java.awt.Cursor;
 import java.awt.Desktop;
+import java.awt.Dimension;
+import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.Rectangle;
-import java.awt.Dimension;
-
-import javax.swing.JLabel;
-
-import java.awt.Component;
-
-import javax.swing.Box;
-
-import java.awt.Color;
-import java.awt.Font;
-
-import javax.swing.SwingConstants;
-
-import com.ezreb.filebrowser.FileBrowser;
-import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
-
-import java.awt.ComponentOrientation;
-import java.awt.Cursor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -41,16 +18,27 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import javax.swing.Box;
 import javax.swing.JButton;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JSplitPane;
-import javax.swing.border.BevelBorder;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.border.EmptyBorder;
+
+import com.ezreb.filebrowser.FileBrowser;
+import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
 
 public class EzrebAssetsUI extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7116267346233549981L;
 	private JPanel contentPane;
 	private File openedFile = null;
 	private JLabel lblNull;
@@ -59,6 +47,7 @@ public class EzrebAssetsUI extends JFrame {
 
 	/**
 	 * Launch the application.
+	 * @param args should be null
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -200,7 +189,7 @@ public class EzrebAssetsUI extends JFrame {
 		infoPane.add(lblBtwThanksFor);
 		
 		JPanel packagePane = new JPanel();
-		FlowLayout flowLayout_1 = (FlowLayout) packagePane.getLayout();
+		packagePane.getLayout();
 		mainPane.addTab("Package Assets", null, packagePane, null);
 		
 		JButton btnOpenFileBrowser = new JButton("Choose File To Package");
@@ -295,7 +284,7 @@ public class EzrebAssetsUI extends JFrame {
 		btnChooseFileLocation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				FileBrowser fb = new FileBrowser();
-				File saveto = fb.run();
+				fb.run();
 				if(lblNull.getText().equals("Image")) {
 					
 				}
